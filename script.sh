@@ -5,7 +5,7 @@ if [ $(id -u) -eq 0 ]; then
 	read -s -p "Enter password : " password
 	egrep "^$username" /etc/passwd >/dev/null
 	if [ $? -eq 0 ]; then
-		echo "Modification depuis main"
+	        echo "Modification finale"
 		exit 1
 	else
 		pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
